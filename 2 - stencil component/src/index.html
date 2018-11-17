@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+    <script src="/build/cmbjstoggle.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      .container {
+        background-color: var(--main-bg-color);
+        color: var(--font-color);
+        transition: color 0.5s ease;
+        transition: background-color 0.5s ease;
+        height: 100vh;
+        padding-top: 40vh;
+        box-sizing: border-box;
+      }
+
+      .container h1 {
+        text-align: center;
+        font-size: 2em;
+      }
+
+      .theme-dark {
+        --font-color: white;
+        --main-bg-color: #494965;
+      }
+
+      .theme-light {
+        --font-color: black;
+        --main-bg-color: #fffff;
+      }
+
+      cmbjs-toggle {
+        margin-top: 0.25em;
+      }
+
+      #toggle-colored {
+        --on-color: #5464ff;
+        --off-color: #454545;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <h1>CMBJS Stencil Toggle</h1>
+
+
+      <cmbjs-toggle> </cmbjs-toggle>
+
+      <cmbjs-toggle id="toggle-colored" on-caption="ON" off-caption="OFF"> </cmbjs-toggle>
+
+      <cmbjs-toggle id="theme-toggle" on-caption="Dark" off-caption="Light">
+        <p>This toggle changes theme</p>
+      </cmbjs-toggle>
+    </div>
+  </body>
+
+  <script>
+    const containerRef = document.getElementById('container');
+    const darkThemeClass = 'theme-light';
+    const lightThemeClass = 'theme-dark';
+
+    let toggleElement = document.getElementById('theme-toggle');
+
+    toggleElement.addEventListener('toggled', e => {
+      let checked = e.detail;
+
+      if (checked) {
+        containerRef.classList.remove(darkThemeClass);
+        containerRef.classList.add(lightThemeClass);
+      } else {
+        containerRef.classList.remove(lightThemeClass);
+        containerRef.classList.add(darkThemeClass);
+      }
+    });
+  </script>
+</html>
