@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- HTML Imports are deprecated at M70, and will be removed in M73 -->
+    <link rel="import" href="./toggle-component/toggle-component.html" />
+
+    <title>Toggle Web Component</title>
+  </head>
+  <body>
+    <div id="container" class="container theme-light">
+      <h1>CMBJS Toggle</h1>
+
+      <cmbjs-toggle > </cmbjs-toggle>
+
+      <cmbjs-toggle id="toggle-colored" on-caption="ON" off-caption="OFF"> </cmbjs-toggle>
+
+      <cmbjs-toggle id="theme-toggle" on-caption="Dark" off-caption="Light">
+        <p>This toggle changes theme</p>
+      </cmbjs-toggle>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
