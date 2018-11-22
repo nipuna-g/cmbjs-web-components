@@ -79,6 +79,8 @@ class StartPolymer3 extends PolymerElement {
 
       <h1>Start Polymer 3.0</h1>
       <p>[[message]]</p>
+    <cmbjs-toggle></cmbjs-toggle>
+
       <paper-checkbox id="omgpie"
         toggles
         noink
